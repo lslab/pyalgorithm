@@ -49,7 +49,16 @@ def missing_number_xor(arr):
     for v in arr:
         P = P ^ v
     return P ^ Q
-    pass
+    
+def missing_number_xor_1(arr):
+    N=len(arr)
+    P = 0
+    for v in range(1,N+1):
+        P=P^v
+    for v in arr:
+        P = P ^ v
+    return P
+    
 
 def sort3number():
     a,b,c = [random.randint(-100,100) for i in range(3)]
@@ -71,7 +80,7 @@ if __name__ == '__main__':
     print missing_number_naive(arr)
     print missing_number_linear(arr)
     print missing_number_xor(arr)
-    
+    print missing_number_xor_1(arr)
     sort3number()
     
     arr=produce_duplicate_array()
